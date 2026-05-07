@@ -4,7 +4,7 @@
 title: "Wajid Siyal — Computational Physics & Software"
 description: "PhD student in fluid dynamics. Research in LBM, PINNs, Bayesian optimization, and high-performance scientific computing."
 url: "https://wajidsiyal.github.io"
-baseurl: "/wsiyal.github.io"
+baseurl: ""
 
 # Build settings
 markdown: kramdown
