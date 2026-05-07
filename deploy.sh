@@ -17,7 +17,7 @@ git add .
 git commit -m "Deploy to GitHub Pages"
 
 # Push to the gh-pages branch
-git push -f https://github.com/wajidsiyal/personal-website.git main:gh-pages
+git push -f https://github.com/wsiyal/wsiyal.github.io.git main:gh-pages
 
 # Go back to the root directory
 cd ..
