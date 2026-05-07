@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +11,10 @@
     <meta property="og:title" content="Wajid Siyal — Computational Physics & Software">
     <meta property="og:description" content="PhD student in fluid dynamics. Research in LBM, PINNs, Bayesian optimization, and high-performance scientific computing.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wajidsiyal.github.io/">
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/">
     <meta name="twitter:card" content="summary_large_image">
     <title>Wajid Siyal — Personal Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23667eea'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='system-ui,sans-serif' font-weight='bold'%3EWS%3C/text%3E%3C/svg%3E">
 </head>
 <body>
@@ -153,7 +156,7 @@
             <p>© <span id="year"></span> Wajid Siyal · <a href="https://github.com/Wajidsiyal/wsiyal.github.io" rel="noopener noreferrer">Source</a></p>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="{{ site.baseurl }}/script.js"></script>
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
