@@ -3,221 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wajid Siyal - Personal Website</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #667eea;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #667eea;
-        }
-        
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding-top: 80px;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
-        }
-        
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.3s;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: white;
-            color: #667eea;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeInUp 1s ease 0.6s;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .section {
-            padding: 5rem 0;
-            background: white;
-        }
-        
-        .section:nth-child(even) {
-            background: #f8f9fa;
-        }
-        
-        .section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .skill-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .skill-card h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .project-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .project-card h3 {
-            color: #333;
-            padding: 1.5rem;
-            margin: 0;
-        }
-        
-        .project-card p {
-            padding: 0 1.5rem 1.5rem;
-            color: #666;
-        }
-        
-        .contact {
-            text-align: center;
-        }
-        
-        .contact p {
-            margin-bottom: 2rem;
-            font-size: 1.2rem;
-        }
-        
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-        }
-    </style>
+    <meta name="description" content="Wajid Siyal — PhD student in fluid dynamics and computational physics. LBM, PINNs, Bayesian optimization, CFD, and scientific software.">
+    <meta name="theme-color" content="#667eea">
+    <meta property="og:title" content="Wajid Siyal — Computational Physics & Software">
+    <meta property="og:description" content="PhD student in fluid dynamics. Research in LBM, PINNs, Bayesian optimization, and high-performance scientific computing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wajidsiyal.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Wajid Siyal — Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23667eea'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='system-ui,sans-serif' font-weight='bold'%3EWS%3C/text%3E%3C/svg%3E">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header>
         <div class="container">
-            <nav>
-                <div class="logo">WS</div>
-                <ul class="nav-links">
+            <nav aria-label="Primary">
+                <div class="logo"><a href="#home">WS</a></div>
+                <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+                    <span class="bar" aria-hidden="true"></span>
+                </button>
+                <ul id="nav-menu" class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -228,102 +34,128 @@
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>Wajid Siyal</h1>
-            <p>PhD Student | Fluid Dynamics & Computational Physics</p>
-            <a href="#projects" class="btn">View My Work</a>
-        </div>
-    </section>
-
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About Me</h2>
-            <p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem;">
-                I am a PhD student specializing in Fluid Dynamics with extensive expertise in computational methods including Lattice Boltzmann Methods (LBM), Physics-Informed Neural Networks (PINNs), and Bayesian Optimization. My research focuses on developing innovative computational approaches to solve complex fluid dynamics problems.
-            </p>
-            <p style="max-width: 800px; margin: 2rem auto 0; text-align: center; font-size: 1.1rem;">
-                Beyond my academic research, I have comprehensive skills in programming languages, application development, and web design. I bridge the gap between theoretical computational physics and practical software development, creating tools and applications that advance scientific research and solve real-world engineering challenges.
-            </p>
-        </div>
-    </section>
-
-    <section id="skills" class="section">
-        <div class="container">
-            <h2>Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Lattice Boltzmann Methods</h3>
-                    <p>Advanced LBM implementations for multiphase flows and complex geometries with GPU acceleration.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Physics-Informed Neural Networks</h3>
-                    <p>Deep learning approaches that incorporate physical laws into neural network architectures for PDE solving.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Bayesian Optimization</h3>
-                    <p>Probabilistic optimization techniques for parameter estimation and experimental design in computational physics.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Computational Fluid Dynamics</h3>
-                    <p>High-fidelity simulations of turbulent flows, heat transfer, and fluid-structure interactions.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Python Programming</h3>
-                    <p>Expert-level Python development for scientific computing, data analysis, and machine learning applications.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Web & App Development</h3>
-                    <p>Full-stack development skills including React, Node.js, mobile development, and modern web technologies.</p>
+    <main id="main">
+        <section id="home" class="hero" aria-labelledby="hero-heading">
+            <div class="container">
+                <h1 id="hero-heading">Wajid Siyal</h1>
+                <p class="tagline">PhD Student · Fluid Dynamics &amp; Computational Physics</p>
+                <div class="cta-row">
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="https://github.com/Wajidsiyal" class="btn btn-secondary" rel="noopener noreferrer" target="_blank">GitHub</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="projects" class="section">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>LBM Flow Simulator</h3>
-                    <p>High-performance Lattice Boltzmann Method implementation for complex fluid flow simulations with GPU acceleration.</p>
-                </div>
-                <div class="project-card">
-                    <h3>PINN Solver Framework</h3>
-                    <p>Physics-Informed Neural Network framework for solving partial differential equations in fluid dynamics.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Bayesian Optimizer</h3>
-                    <p>Adaptive Bayesian optimization system for parameter tuning in computational physics experiments.</p>
-                </div>
-                <div class="project-card">
-                    <h3>CFD Visualization App</h3>
-                    <p>Interactive web application for real-time visualization of computational fluid dynamics results.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Mobile Research Assistant</h3>
-                    <p>Cross-platform mobile app for monitoring and controlling computational experiments remotely.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Scientific Computing Library</h3>
-                    <p>Comprehensive Python library for numerical methods in fluid dynamics and heat transfer.</p>
+        <section id="about" class="section" aria-labelledby="about-heading">
+            <div class="container">
+                <h2 id="about-heading">About Me</h2>
+                <p class="prose">
+                    I am a PhD student specializing in fluid dynamics with extensive expertise in computational methods including Lattice Boltzmann Methods (LBM), Physics-Informed Neural Networks (PINNs), and Bayesian optimization. My research focuses on developing innovative computational approaches to solve complex fluid dynamics problems.
+                </p>
+                <p class="prose">
+                    Beyond academic research, I work across programming languages, application development, and web technologies. I bridge theoretical computational physics and practical software—building tools that advance scientific research and address real engineering challenges.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills" class="section" aria-labelledby="skills-heading">
+            <div class="container">
+                <h2 id="skills-heading">Skills &amp; Expertise</h2>
+                <div class="skills-grid">
+                    <article class="skill-card">
+                        <h3>Lattice Boltzmann Methods</h3>
+                        <p>Advanced LBM implementations for multiphase flows and complex geometries with GPU acceleration.</p>
+                    </article>
+                    <article class="skill-card">
+                        <h3>Physics-Informed Neural Networks</h3>
+                        <p>Deep learning models that embed physical laws for PDE-constrained problems in fluid dynamics.</p>
+                    </article>
+                    <article class="skill-card">
+                        <h3>Bayesian Optimization</h3>
+                        <p>Probabilistic optimization for parameter estimation and experimental design in computational physics.</p>
+                    </article>
+                    <article class="skill-card">
+                        <h3>Computational Fluid Dynamics</h3>
+                        <p>High-fidelity modeling of turbulent flows, heat transfer, and fluid–structure interaction.</p>
+                    </article>
+                    <article class="skill-card">
+                        <h3>Python &amp; Scientific Computing</h3>
+                        <p>Python for numerical methods, data analysis, ML workflows, and reproducible research.</p>
+                    </article>
+                    <article class="skill-card">
+                        <h3>Web &amp; Application Development</h3>
+                        <p>Full-stack and tooling experience—interfaces, APIs, and deployment for research software.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="section contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p>I'm always open to discussing research collaborations, computational physics challenges, and software development opportunities. Feel free to reach out!</p>
-            <a href="mailto:your-email@example.com" class="btn">Contact Me</a>
-        </div>
-    </section>
+        <section id="projects" class="section" aria-labelledby="projects-heading">
+            <div class="container">
+                <h2 id="projects-heading">Featured Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-inner">
+                            <h3>LBM Flow Simulator</h3>
+                            <p>High-performance Lattice Boltzmann implementation for complex flows with GPU acceleration.</p>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-inner">
+                            <h3>PINN Solver Framework</h3>
+                            <p>Physics-informed neural network framework for PDEs arising in fluid dynamics.</p>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-inner">
+                            <h3>Bayesian Optimizer</h3>
+                            <p>Adaptive Bayesian optimization for parameter tuning in computational experiments.</p>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-inner">
+                            <h3>CFD Visualization App</h3>
+                            <p>Interactive web application for exploring CFD results in the browser.</p>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-inner">
+                            <h3>Mobile Research Assistant</h3>
+                            <p>Cross-platform app concepts for monitoring and controlling experiments remotely.</p>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-inner">
+                            <h3>Scientific Computing Library</h3>
+                            <p>Python utilities for numerical methods in fluid dynamics and heat transfer.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <h2 id="contact-heading">Get In Touch</h2>
+                <p class="lead">Open to research collaborations, computational physics challenges, and software-focused roles. Reach out via GitHub or email.</p>
+                <div class="contact-links">
+                    <a href="https://github.com/Wajidsiyal" class="btn" rel="noopener noreferrer" target="_blank">GitHub Profile</a>
+                    <!-- Replace href with your preferred public email -->
+                    <a href="mailto:wajid@example.com" class="btn">Email</a>
+                </div>
+                <p class="contact-note">Update the mailto address in <code>index.html</code> when you publish your real contact email.</p>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p>© 2024 Wajid Siyal. Built with ❤️</p>
+            <p>© <span id="year"></span> Wajid Siyal · <a href="https://github.com/Wajidsiyal/wsiyal.github.io" rel="noopener noreferrer">Source</a></p>
         </div>
     </footer>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

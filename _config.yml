@@ -1,14 +1,19 @@
-# Site settings
-title: "Wajid Siyal - Personal Website"
-description: "PhD Student in Fluid Dynamics | LBM | PINNs | Bayesian Optimization"
-url: "https://wsiyal.github.io"
+# Jekyll Configuration
+# Personal website for Wajid Siyal
+
+title: "Wajid Siyal — Computational Physics & Software"
+description: "PhD student in fluid dynamics. Research in LBM, PINNs, Bayesian optimization, and high-performance scientific computing."
+url: "https://wajidsiyal.github.io"
 baseurl: ""
 
 # Build settings
 markdown: kramdown
 highlighter: rouge
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
-# Exclude from processing
+# Exclude files from processing
 exclude:
   - node_modules/
   - package.json
@@ -16,7 +21,15 @@ exclude:
   - vite.config.js
   - postcss.config.js
   - tailwind.config.js
-  - src/
-  - dist/
-  - .vite/
-  - *.bat
+  - .gitignore
+  - "*.bat"
+  - README.md
+
+# GitHub Pages specific
+github:
+  repository_url: https://github.com/Wajidsiyal/wsiyal.github.io
+
+# Site author
+author:
+  name: Wajid Siyal
+  github: Wajidsiyal
