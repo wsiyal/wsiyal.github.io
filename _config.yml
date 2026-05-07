@@ -7,13 +7,6 @@ baseurl: ""
 # Build settings
 markdown: kramdown
 highlighter: rouge
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-
-# Theme settings
-theme: minima
-remote_theme: jekyll/minima
 
 # Exclude from processing
 exclude:
@@ -24,5 +17,6 @@ exclude:
   - postcss.config.js
   - tailwind.config.js
   - src/
+  - dist/
+  - .vite/
   - *.bat
-  - *.md
