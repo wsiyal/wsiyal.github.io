@@ -9,6 +9,7 @@ function App() {
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
+    { name: 'Research', href: '#research' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
@@ -97,7 +98,7 @@ function App() {
           </h1>
           
           <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8">
-            Building digital experiences that matter
+            PhD Student | Fluid Dynamics & Computational Physics
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -142,11 +143,60 @@ function App() {
           </h2>
           <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-              I'm a passionate professional dedicated to creating impactful solutions. With a focus on innovation and quality, I strive to deliver exceptional results in every project I undertake.
+              I am a PhD student specializing in Fluid Dynamics with extensive expertise in computational methods including Lattice Boltzmann Methods (LBM), Physics-Informed Neural Networks (PINNs), and Bayesian Optimization. My research focuses on developing innovative computational approaches to solve complex fluid dynamics problems.
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              My journey has equipped me with diverse skills and experiences that I bring to every challenge. I believe in continuous learning and staying at the forefront of technology to deliver the best possible outcomes.
+              Beyond my academic research, I have comprehensive skills in programming languages, application development, and web design. I bridge the gap between theoretical computational physics and practical software development, creating tools and applications that advance scientific research and solve real-world engineering challenges.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Research Section */}
+      <section id="research" className="py-24 px-4 bg-slate-50 dark:bg-slate-900/50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12 text-center text-slate-900 dark:text-white">
+            Research Interests
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: 'Lattice Boltzmann Methods',
+                description: 'Advanced LBM implementations for multiphase flows and complex geometries with GPU acceleration.',
+                icon: '🌊',
+              },
+              {
+                title: 'Physics-Informed Neural Networks',
+                description: 'Deep learning approaches that incorporate physical laws into neural network architectures for PDE solving.',
+                icon: '🧠',
+              },
+              {
+                title: 'Bayesian Optimization',
+                description: 'Probabilistic optimization techniques for parameter estimation and experimental design in computational physics.',
+                icon: '📊',
+              },
+              {
+                title: 'Computational Fluid Dynamics',
+                description: 'High-fidelity simulations of turbulent flows, heat transfer, and fluid-structure interactions.',
+                icon: '💨',
+              },
+              {
+                title: 'High-Performance Computing',
+                description: 'Parallel computing strategies and GPU acceleration for large-scale scientific simulations.',
+                icon: '⚡',
+              },
+              {
+                title: 'Scientific Visualization',
+                description: 'Interactive visualization techniques for complex multi-dimensional scientific data.',
+                icon: '📈',
+              },
+            ].map((interest, index) => (
+              <div key={index} className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow">
+                <div className="text-3xl mb-4">{interest.icon}</div>
+                <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white">{interest.title}</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-300">{interest.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -157,14 +207,16 @@ function App() {
           <h2 className="text-4xl font-bold mb-12 text-center text-slate-900 dark:text-white">
             Skills & Expertise
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
+              { name: 'Lattice Boltzmann Methods', level: 95 },
+              { name: 'Physics-Informed Neural Networks', level: 90 },
+              { name: 'Bayesian Optimization', level: 88 },
+              { name: 'Computational Fluid Dynamics', level: 92 },
+              { name: 'Python Programming', level: 96 },
+              { name: 'App Development', level: 85 },
               { name: 'Web Development', level: 90 },
-              { name: 'UI/UX Design', level: 85 },
-              { name: 'Problem Solving', level: 95 },
-              { name: 'Project Management', level: 80 },
-              { name: 'Communication', level: 88 },
-              { name: 'Leadership', level: 82 },
+              { name: 'Data Analysis', level: 87 },
             ].map((skill) => (
               <div key={skill.name} className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border border-slate-200 dark:border-slate-700">
                 <div className="flex justify-between mb-3">
@@ -192,19 +244,34 @@ function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: 'Project One',
-                description: 'An innovative solution that addresses real-world challenges with modern technology.',
-                tags: ['React', 'Node.js', 'MongoDB'],
+                title: 'LBM Flow Simulator',
+                description: 'High-performance Lattice Boltzmann Method implementation for complex fluid flow simulations with GPU acceleration.',
+                tags: ['Python', 'CUDA', 'NumPy', 'MPI'],
               },
               {
-                title: 'Project Two',
-                description: 'A creative application showcasing advanced design principles and user experience.',
-                tags: ['TypeScript', 'Tailwind', 'Framer'],
+                title: 'PINN Solver Framework',
+                description: 'Physics-Informed Neural Network framework for solving partial differential equations in fluid dynamics.',
+                tags: ['TensorFlow', 'PyTorch', 'JAX', 'SciPy'],
               },
               {
-                title: 'Project Three',
-                description: 'A scalable platform built for performance and reliability in production environments.',
-                tags: ['Python', 'AWS', 'Docker'],
+                title: 'Bayesian Optimizer',
+                description: 'Adaptive Bayesian optimization system for parameter tuning in computational physics experiments.',
+                tags: ['GPyTorch', 'Scikit-learn', 'Optuna'],
+              },
+              {
+                title: 'CFD Visualization App',
+                description: 'Interactive web application for real-time visualization of computational fluid dynamics results.',
+                tags: ['React', 'Three.js', 'WebGL', 'D3.js'],
+              },
+              {
+                title: 'Mobile Research Assistant',
+                description: 'Cross-platform mobile app for monitoring and controlling computational experiments remotely.',
+                tags: ['React Native', 'Flutter', 'Firebase'],
+              },
+              {
+                title: 'Scientific Computing Library',
+                description: 'Comprehensive Python library for numerical methods in fluid dynamics and heat transfer.',
+                tags: ['Python', 'Cython', 'OpenMP', 'HDF5'],
               },
             ].map((project, index) => (
               <div
@@ -243,7 +310,7 @@ function App() {
             Get In Touch
           </h2>
           <p className="text-center text-slate-600 dark:text-slate-300 mb-12">
-            I'm always open to discussing new opportunities and collaborations. Feel free to reach out!
+            I'm always open to discussing research collaborations, computational physics challenges, and software development opportunities. Feel free to reach out!
           </p>
           <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
             <form className="space-y-6">
