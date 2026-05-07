@@ -1,0 +1,28 @@
+# Site settings
+title: "Wajid Siyal - Personal Website"
+description: "PhD Student in Fluid Dynamics | LBM | PINNs | Bayesian Optimization"
+url: "https://wsiyal.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Theme settings
+theme: minima
+remote_theme: jekyll/minima
+
+# Exclude from processing
+exclude:
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - vite.config.js
+  - postcss.config.js
+  - tailwind.config.js
+  - src/
+  - *.bat
+  - *.md
