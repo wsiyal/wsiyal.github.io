@@ -177,27 +177,25 @@ function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');
 function copySummary(){if(!selected.length)return toast('Add at least one treatment');const c=currencyCode(),rate=+$('rate').value,total=selected.reduce((s,x)=>s+(x.isRange?0:x.price*x.qty),0),lines=['HUANGSHAN INTERNATIONAL DENTAL HOSPITAL','ESTIMATED TREATMENT QUOTATION','Client: '+($('clientName').value||'—'),'Consultant: '+($('consultantName').value||'—'),'Country: '+countryName(),'',...selected.map(x=>x.isRange?rangeText(x,rate,c):`${x.name} × ${x.qty}: ${money(x.price*x.qty)} / ${money(x.price*x.qty*rate,c)}`),'',...($('showTotal').checked?['Total: '+money(total)+' / '+money(total*rate,c)]:[]),'Exchange rate: 1 RMB = '+rate+' '+c,$('notes').value?'Notes: '+$('notes').value:''];navigator.clipboard.writeText(lines.join('\n')).then(()=>toast('Quotation summary copied')).catch(()=>toast('Could not copy automatically'))}
 $('currency').onchange=setRate;$('rate').oninput=()=>{const c=$('currency').value;if(c!=='OTHER'){manualOverride.add(c);currencies[c].rate=+$('rate').value||0}renderQuote()};$('otherCountry').oninput=updateCurrencyDisplay;$('otherCode').oninput=updateCurrencyDisplay;$('showTotal').onchange=renderQuote;
 $('search').onchange=()=>{const v=$('search').value;if(!v){$('treatmentPreview').hidden=true;return}const [ci,ii]=v.split('-').map(Number);showTreatmentPreview(ci,ii)};
-const PDF_PAGE_PX=740; /* fixed capture width so the quotation renders as a consistent, professional page regardless of the live sidebar's on-screen width */
+function pdfFilename(){
+  const client=($('clientName').value||'').trim().replace(/[^\w\s-]/g,'').replace(/\s+/g,'_');
+  const qno=($('quoteNo').textContent||'').replace(/[^\d-]/g,'');
+  return (client?client+'_':'')+'Quotation'+(qno?'_'+qno:'')+'.pdf';
+}
 function pdfWorker(){
-  const filename=($('quoteNo').textContent||'Quotation').replace(/[^\w-]+/g,'_')+'.pdf';
   return html2pdf().set({
     margin:[10,10,14,10],
-    filename,
+    filename:pdfFilename(),
     image:{type:'jpeg',quality:0.96},
-    html2canvas:{scale:3,useCORS:true,backgroundColor:'#ffffff',windowWidth:PDF_PAGE_PX,onclone(doc){
-      doc.querySelectorAll('#quotePaper input, #quotePaper textarea').forEach(clone=>{
-        const live=document.getElementById(clone.id);
-        if(!live)return;
-        if(clone.tagName==='TEXTAREA')clone.textContent=live.value;
-        else clone.setAttribute('value',live.value);
+    /* scrollX/scrollY must be 0: html2canvas otherwise shifts the capture by the page scroll, giving a blank or pushed-down PDF */
+    html2canvas:{scale:3,useCORS:true,backgroundColor:'#ffffff',scrollX:0,scrollY:0,onclone(doc){
+      doc.querySelectorAll('.quote-paper .remove,.quote-paper .total-toggle').forEach(e=>e.remove());
+      doc.querySelectorAll('.quote-paper').forEach(p=>p.style.background='#fff');
+      doc.querySelectorAll('.quote-paper input').forEach(i=>i.removeAttribute('placeholder'));
+      doc.querySelectorAll('.quote-paper textarea').forEach(t=>{
+        if(!t.value.trim())return t.remove();
+        const d=doc.createElement('div');d.style.cssText='white-space:pre-wrap;margin:14px 0;font:inherit';d.textContent=t.value;t.replaceWith(d);
       });
-      doc.querySelectorAll('.workspace').forEach(el=>{el.style.display='block'});
-      doc.querySelectorAll('.builder,.topbar,.actions').forEach(el=>{el.style.display='none'});
-      doc.querySelectorAll('.quote').forEach(el=>{el.style.position='static';el.style.width=PDF_PAGE_PX+'px';el.style.maxWidth=PDF_PAGE_PX+'px';el.style.border='none';el.style.boxShadow='none'});
-      doc.querySelectorAll('#quotePaper').forEach(paper=>{paper.style.position='static';paper.style.width=PDF_PAGE_PX+'px';paper.style.maxWidth=PDF_PAGE_PX+'px';paper.style.minHeight='0';paper.style.margin='0';paper.style.padding='24px'});
-      doc.querySelectorAll('.remove').forEach(b=>b.remove());
-      doc.querySelectorAll('.total-toggle').forEach(t=>t.remove());
-      doc.querySelectorAll('#notes').forEach(note=>{if(!note.value.trim())note.remove();else{note.style.border='0';note.style.padding='0'}});
     }},
     jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},
     pagebreak:{mode:['css','legacy']}
